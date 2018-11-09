@@ -177,7 +177,7 @@ class bumpFit:
                  Ei: is the center energy of the ith broadened transition
                  Gi: is the broadening of the ith broadened transition
     iparam:     1d numpy array holding the initial guess for paramter values
-                 (must be specified using .initalizeFitParams BEFORE the fit
+                 (must be specified using .initializeFitParams BEFORE the fit
                   can be performed). Structure:
                   [S,a1,E1,G1,a2,E2,G2,...]
     param:      1d numpy array holding the resulting parameter values after 
@@ -211,7 +211,7 @@ class bumpFit:
        / 2a)  Specify fit region (.createFitRegion)
     opt| 2b)  Specify plot region (.createPlotRegion)
        \ 2c)  Freeze parameters NOT used during fitting (.freezeFitParams)
-          3)  Provide inital guess for parameter values (.initalizeFitParams)
+          3)  Provide inital guess for parameter values (.initializeFitParams)
           4)  Set bounds on free fit parameters (.createFitParamBounds)
           5)  Perform Fit (.performFit)
      opt/ 6)  Plot resuts (.plot)
@@ -299,7 +299,7 @@ class bumpFit:
         self.which = np.array(which,dtype='bool')
         self.nf = np.sum(np.ones(1+3*self.nbump)[self.which])
     
-    def initalizeFitParams(self,iparam):
+    def initializeFitParams(self,iparam):
         """
         Function sets the initial guess for parameter values
         
@@ -511,7 +511,7 @@ class fit:
                  Vi:   The Photon-Exciton coupling for the ith exciton. The
                          rabi splitting is 2*Vi
     iparam:     1d numpy array holding the initial guess for paramter values
-                 (must be specified using .initalizeFitParams BEFORE the fit
+                 (must be specified using .initializeFitParams BEFORE the fit
                   can be performed). Structure:
                   [Ec0,neff,Ex1,V1,Ex2,V2,...]
     param:      1d numpy array holding the resulting parameter values after 
@@ -541,7 +541,7 @@ class fit:
           1)  Call fit class and provide aoi, pts and nEx
     opt/ 2a)  Specify fit region (.createFitRegion)
     opt\ 2b)  Freeze parameters NOT used during fitting (.freezeFitParams)
-          3)  Provide inital guess for parameter values (.initalizeFitParams)
+          3)  Provide inital guess for parameter values (.initializeFitParams)
           4)  Set bounds on free fit parameters (.createFitParamBounds)
           5)  Perform Fit (.performFit)
      opt/ 6)  Plot resuts (.plot)
@@ -602,7 +602,7 @@ class fit:
         self.which = np.array(which,dtype='bool')
         self.nf = np.sum(np.ones(len(self.paramNames))[self.which])
     
-    def initalizeFitParams(self,iparam):
+    def initializeFitParams(self,iparam):
         """
         Function sets the initial guess for parameter values
         
